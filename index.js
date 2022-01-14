@@ -1,12 +1,5 @@
 'use strict';
 
-/*
-1 получить масс полніх имен с мап
-2 получить мас совершеннолетних
-3 зарандомить подписку у юзеров
-4 получить масссив подпис совершеннолетних юзеров женского пола и вівести их почту
-*/
-
 function User(firstName, lastName, age, email, isMale, isSubscribe = false) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -36,19 +29,28 @@ function createRandomUser(quantity) {
 }
 
 //1. Получить массив полных имен с помощью .map()
-const getFullNamesList = (users) => users.map((item) => item.getFullName());
+const getFullNamesArr = (users) => users.map((item) => item.getFullName());
 
 //2. Получить массив совершеннолетних пользователей
-//const get
+const getAdultUsersArr = (users) =>
+  users.filter((item) => {
+    if (item.age > 18) {
+      return this;
+    }
+  });
+//3. Зарандомить подписку у пользователей
+
+//4. Получить массив подписанных совершеннолетних пользователей женского пола, но вывести только их почту
 
 const userArr = createRandomUser(50);
 //console.table(userArr);
 
 //1.
-const allUsersName = getFullNamesList(userArr);
-//console.log(allUsersName);
+const allUsersNames = getFullNamesArr(userArr);
+//console.log(allUsersNames);
 //2.
-
+const allAdultUsers = getAdultUsersArr(userArr);
+//console.log(allAdultUsers);
 //3.
 
 //4.
