@@ -39,12 +39,12 @@ const getAdultUsersArr = (users) =>
     }
   });
 //3. Зарандомить подписку у пользователей
-
+const setRandomSubscribe = (users) =>
+  users.forEach((item) => (item.isSubscribe = Math.random() > 0.5));
 //4. Получить массив подписанных совершеннолетних пользователей женского пола, но вывести только их почту
 
 const userArr = createRandomUser(50);
 //console.table(userArr);
-
 //1.
 const allUsersNames = getFullNamesArr(userArr);
 //console.log(allUsersNames);
@@ -53,4 +53,6 @@ const allAdultUsers = getAdultUsersArr(userArr);
 //console.log(allAdultUsers);
 //3.
 
+setRandomSubscribe(userArr);
 //4.
+console.table(userArr);
